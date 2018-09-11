@@ -25,5 +25,6 @@ $UnprotectedType = "UnprotectedDistributionPoint"
 $SuppressRestartServer = $false
 $SuppressRestartWorkstation = $false
 #-----------------------------------------------------------[Execution]------------------------------------------------------------
-
+Import-Module ConfigurationManager
+Set-Location -Path CAS: #Whatever your site code is
 Start-CMSoftwareUpdateDeployment -CollectionName $CollName -SoftwareUpdateGroupName $SUGName -AcceptEula -AllowRestart $SystemRestart -DeploymentName $DeploymentName -DeploymentType $DeploymentType -Description $Description -DownloadFromMicrosoftUpdate $true -EnforcementDeadline $EnforcementDeadlineTime -EnforcementDeadlineDay $EnforcementDeadlineDate -ProtectedType $ProtectedType -RestartServer $SuppressRestartServer -RestartWorkstation $SuppressRestartWorkstation -SoftwareInstallation $true -TimeBasedOn LocalTime -UnprotectedType $UnprotectedType -UseBranchCache $false -UserNotification DisplayAll -VerbosityLevel AllMessages
