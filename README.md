@@ -5,14 +5,19 @@ These scripts will run on a task scheduler with an account that has full SCCM ad
 It will leverage the built in ADR system in SCCM. 
 
 
-# How this works
+# Design
 
-## This is the design of the patching scheme
+## Production 
 * Enterprise Patching Occurs every 3rd week Monday through Sunday at midnight
 * Each deployment will deploy with a reboot except for one
 * The no-reboot deployment will just install patches on the first day leaving the server owner to reboot on demand
 * There will need to be 8 total collections built out for this. One for each day of the week and one for no-reboot
 * This will require you to leverage Automatic Deployment Rules to work.
+
+## Pilots
+* Pilot Patching Occurs the same week as patch Tuesday
+* It will occur on Thursday, Friday, Saturday, and Sunday
+* You will review metrics with reports before pushing to production
 
 ## The Scripts
 ### Patch Tuesday 
@@ -63,3 +68,5 @@ which will be the current month.
 
 ### Deploy Monthly Scripts
 This is very straight forward for the design that was requested of me my management opted for simple. I could've just ran a script once starting on week 3 and had all of the deployments going to all of the collection (Which was the most efficient way) but in the project design the managers wanted each day running on task scheduler so if an issue was identified the following days could be disabled one by one. (With an off button of course) This would require one more script. It would require you to name all of your task scheduler tasks with a specific naming scheme but this could be done with powershell as well. 
+
+By the end of this, the monthly packaging,downloading, and deployment of patches is taken care of and you can focus on remediation. 
