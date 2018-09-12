@@ -1,12 +1,10 @@
-# SCCM-Patching-Scripts-and-Automation
+# Design Overview
 #### Purpose:
 Automating the overhead that comes with Monthly Patching in SCCM.
 #### Overhead to Automate:
 * Packaging and downloading monthly updates (Can be done wtih default ADR pointing to an empty collection)
 * Defining, Creating and Maintaining Naming Standards for Software Update Groups (ADR & Scripting)
 * Deploying Monthly Updates to collections of your choosing (Scripting & Task Scheduler)
-
-# Design Overview
 
 ## Production 
 * Enterprise Patching Occurs every 3rd week Monday through Sunday at midnight
