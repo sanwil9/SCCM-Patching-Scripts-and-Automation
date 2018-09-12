@@ -1,9 +1,10 @@
 # SCCM-Patching-Scripts-and-Automation
-This process is meant to simplify monthly patching. Everyone is running in to the same problems. Full FTE Resources are needed to run the entire patching program due to inaccuracies or inconsistencies in their environment. In this process you will not do "Custom" deployments. The simplest solution is only to provide the server owners with "Options"
-
-These scripts will run on a task scheduler with an account that has full SCCM admin rights. 
-It will leverage the built in ADR system in SCCM. 
-
+#### Purpose:
+Automating the overhead that comes with Monthly Patching in SCCM.
+#### Overhead to Automate:
+* Packaging and downloading monthly updates (Can be done wtih default ADR pointing to an empty collection)
+* Defining, Creating and Maintaining Naming Standards for Software Update Groups (ADR & Scripting)
+* Deploying Monthly Updates to collections of your choosing (Scripting & Task Scheduler)
 
 # Design Overview
 
