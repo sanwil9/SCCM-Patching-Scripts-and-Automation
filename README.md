@@ -5,7 +5,7 @@ These scripts will run on a task scheduler with an account that has full SCCM ad
 It will leverage the built in ADR system in SCCM. 
 
 
-# Design
+# Design Overview
 
 ## Production 
 * Enterprise Patching Occurs every 3rd week Monday through Sunday at midnight
@@ -20,9 +20,7 @@ It will leverage the built in ADR system in SCCM.
 * You will review metrics with reports before pushing to production
 
 ## The Scripts
-### Patch Tuesday 
 * Rename ADR to Current Month.ps1 (Runs on Patch Tuesday with Task Scheduler)
-### Week 3 on Task Scheduler
 * Deploy Monthly Updates Monday.ps1 (Runs on Week 3)
 * Deploy Monthly Updates Tuesday.ps1 (Runs on Week 3)
 * Deploy Monthly Updates Wednesday.ps1 (Runs on Week 3)
@@ -32,8 +30,7 @@ It will leverage the built in ADR system in SCCM.
 * Deploy Monthly Updates Sunday.ps1 (Runs on Week 3)
 * Deploy Monthly Updates ServerOwnerReboot.ps1 (Runs on Week 3)
 
-### Rename ADR to Current Month (How it works)
-<br>Then this script will rename it to match your naming conventions 
+# Engineering Overview
 For this to work correctly you have to leverage Automatic Deployment Rules
 The best way automate this is to have an ADR point to an empty collection and have the ADR run against it. VOILA! Your monthly package is created and it didn't deploy to anything. You will want this package to follow a standardized naming scheme. The example we have below is this. We have it broken down by year and the current year will have it's monthly's auto generated.
 
